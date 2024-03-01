@@ -95,3 +95,22 @@ while True:
         break
     print(s[start:end])
     start = end
+
+
+#Days since date of birth
+from datetime import datetime
+
+try:
+
+    date_of_birth = input("Enter a date (in the format DD-MM-YYYY): ")
+    input_date = datetime.strptime(date_of_birth, "%d-%m-%Y")
+    days_since_birthday = (datetime.now() - input_date).days
+    print("Number of days since", date_of_birth, ":", days_since_birthday)
+except ValueError:
+    print("Invalid date format. Please enter the date in the format DD-MM-YYYY")
+
+except:
+    print("Some other error occurred")
+
+finally:
+    print("Thank you for using the program")
